@@ -21,4 +21,8 @@ static NSString * kBannerReuseIdentifier = @"SHBannerCell";
 
 - (void)bannerUpdateSourec:(NSArray <SHBannerModel *>*)bannerModels;
 
+/**
+ 放在外面方便你自己修改
+ */
+@property (nonatomic, weak) UIPageControl *bannerPgae;
 @end

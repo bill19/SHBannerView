@@ -25,9 +25,15 @@
 
 - (void)request {
     NSMutableArray *mu = [NSMutableArray array];
-    for (NSInteger index = 0; index < 0; index ++) {
+    NSArray * images = @[@"http://pic12.photophoto.cn/20090910/0005018303466977_b.jpg",
+                         @"https://timgsa.baidu.com/timg?image&quality=80&size=b9999_10000&sec=1521612459766&di=4def9c448387c4b7e8f12de4f28ccb46&imgtype=0&src=http%3A%2F%2Fimgsrc.baidu.com%2Fimage%2Fc0%253Dshijue1%252C0%252C0%252C294%252C40%2Fsign%3D9cb3315ee1f81a4c323fe48abf430a2c%2F500fd9f9d72a6059b5ad62302234349b033bba5f.jpg",
+                         @"http://pic40.nipic.com/20140412/11857649_170524977000_2.jpg",
+                         @"http://p1.wmpic.me/article/2017/11/15/1510724610_EyEUUQAP.jpg",
+                         @"http://pic60.nipic.com/file/20150207/11284670_083602732000_2.jpg",
+                         @"http://pic36.photophoto.cn/20150728/0022005597823716_b.jpg"];
+    for (NSInteger index = 0; index < images.count; index ++) {
         SHBannerModel *model = [[SHBannerModel alloc] init];
-        model.imageUrl = @"https://timgsa.baidu.com/timg?image&quality=80&size=b9999_10000&sec=1521612459766&di=4def9c448387c4b7e8f12de4f28ccb46&imgtype=0&src=http%3A%2F%2Fimgsrc.baidu.com%2Fimage%2Fc0%253Dshijue1%252C0%252C0%252C294%252C40%2Fsign%3D9cb3315ee1f81a4c323fe48abf430a2c%2F500fd9f9d72a6059b5ad62302234349b033bba5f.jpg";
+        model.imageUrl = [images objectAtIndex:index];
         model.webUrl = @"777";
         [mu addObject:model];
     }
@@ -39,6 +45,8 @@
     SHBannerView *bannerView = [[SHBannerView alloc] initWithFrame:CGRectMake(0, -kBannerStatuBarHeight, kBannerScreenWidth, kBannerScreenHeight)];
     _bannerView = bannerView;
     [self.view addSubview:_bannerView];
+    _bannerView.bannerPgae.pageIndicatorTintColor = [UIColor purpleColor];
+    _bannerView.bannerPgae.currentPageIndicatorTintColor = [UIColor greenColor];
     [self request];
 }
 @end

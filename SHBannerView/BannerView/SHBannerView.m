@@ -9,11 +9,11 @@
 #import "SHBannerView.h"
 #import "SHBannerModel.h"
 #import "SHBannerCell.h"
+#import "Masonry.h"
 static NSInteger kBannerTimes = 500;
 @interface SHBannerView()<UICollectionViewDelegate,UICollectionViewDataSource,UICollectionViewDelegateFlowLayout,UIScrollViewDelegate>
 @property (nonatomic, retain) NSTimer *timer;
 @property (nonatomic, weak) UICollectionView *collectionView;
-@property (nonatomic, weak) UIPageControl *bannerPgae;
 @property (nonatomic, strong) NSArray <SHBannerModel *>* bannerModels;
 
 @end
@@ -50,12 +50,17 @@ static NSInteger kBannerTimes = 500;
 }
 
 - (void)setupPageControl {
-    UIPageControl *bannerPgae = [[UIPageControl alloc] initWithFrame:CGRectMake(0, kBannerView_H - kBannerPageControlHeight, kBannerScreenWidth, kBannerPageControlHeight)];
+    UIPageControl *bannerPgae = [[UIPageControl alloc] init];
     bannerPgae.pageIndicatorTintColor = [UIColor blackColor];
     bannerPgae.currentPageIndicatorTintColor = [UIColor redColor];
     bannerPgae.userInteractionEnabled = NO;
     _bannerPgae = bannerPgae;
     [self addSubview:_bannerPgae];
+    [_bannerPgae mas_makeConstraints:^(MASConstraintMaker *make) {
+        make.left.right.mas_equalTo(_collectionView);
+        make.height.mas_equalTo(kBannerPageControlHeight);
+        make.bottom.mas_equalTo(_collectionView.mas_bottom);
+    }];
 }
 
 - (UICollectionViewCell *)collectionView:(UICollectionView *)collectionView cellForItemAtIndexPath:(NSIndexPath *)indexPath {
@@ -65,7 +70,6 @@ static NSInteger kBannerTimes = 500;
 }
 
 - (NSInteger)collectionView:(UICollectionView *)collectionView numberOfItemsInSection:(NSInteger)section {
-
     if (self.bannerModels.count > 1) {
         return self.bannerModels.count * kBannerTimes * 2;
     }
@@ -78,7 +82,7 @@ static NSInteger kBannerTimes = 500;
 
 
 - (SHBannerModel *)modelForIndexPath:(NSIndexPath *)indexPath {
-    NSInteger item = indexPath.item % kBannerTimes;
+    NSInteger item = (indexPath.item % kBannerTimes) % self.bannerModels.count;
     if (item < self.bannerModels.count) {
         return self.bannerModels[item];
     }
