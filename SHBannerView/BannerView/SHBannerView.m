@@ -98,6 +98,7 @@ static NSInteger kBannerTimes = 500;
     if (scrollView == self && (scrollView.contentOffset.y + kBannerStatuBarHeight) < 0) {
         CGFloat sx = 1 - ((scrollView.contentOffset.y + kBannerStatuBarHeight) / kBannerView_H * 3.6);//放大比例
         self.collectionView.transform = CGAffineTransformScale(CGAffineTransformIdentity, sx,sx);
+        _bannerPgae.transform = CGAffineTransformMakeTranslation(0, - (scrollView.contentOffset.y + kBannerStatuBarHeight));
     }
     if (scrollView == _collectionView && self.bannerModels.count > 1) {
         NSInteger index =  ((NSInteger)(scrollView.contentOffset.x / [UIScreen mainScreen].bounds.size.width)) % self.bannerModels.count;

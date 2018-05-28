@@ -30,7 +30,7 @@
                          @"http://pic40.nipic.com/20140412/11857649_170524977000_2.jpg",
                          @"http://p1.wmpic.me/article/2017/11/15/1510724610_EyEUUQAP.jpg",
                          @"http://pic60.nipic.com/file/20150207/11284670_083602732000_2.jpg",
-                         @"http://pic36.photophoto.cn/20150728/0022005597823716_b.jpg"];
+                         @"http://knoya-qd.erp.knoya.com/es/quality_issues_pic/0/20180524142013.jpeg?OSSAccessKeyId=cjQsDX9bON3Pgzyc&Expires=1527234223&Signature=Il%2FhsdQIY%2F%2BGnqBUyWWFUQEdGcQ%3D"];
     for (NSInteger index = 0; index < images.count; index ++) {
         SHBannerModel *model = [[SHBannerModel alloc] init];
         model.imageUrl = [images objectAtIndex:index];
