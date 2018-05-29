@@ -37,7 +37,7 @@
         model.webUrl = @"777";
         [mu addObject:model];
     }
-    [_bannerView bannerUpdateSourec:mu];
+    [_bannerView bannerUpdateSource:mu];
 }
 
 #pragma mark -KNBannerViewDelegate 轮播图代理方法

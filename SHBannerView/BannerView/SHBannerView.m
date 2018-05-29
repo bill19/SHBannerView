@@ -139,7 +139,7 @@ static NSInteger kBannerTimes = 500;
     self.timer = nil;
 }
 
-- (void)bannerUpdateSourec:(NSArray <SHBannerModel *>*)bannerModels {
+- (void)bannerUpdateSource:(NSArray <SHBannerModel *>*)bannerModels {
     if (bannerModels.count > 1) {
         self.bannerModels = bannerModels;
         _bannerPgae.numberOfPages = bannerModels.count;

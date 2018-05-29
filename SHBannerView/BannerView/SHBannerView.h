@@ -19,7 +19,7 @@ static NSString * kBannerReuseIdentifier = @"SHBannerCell";
 
 @interface SHBannerView : UIScrollView
 
-- (void)bannerUpdateSourec:(NSArray <SHBannerModel *>*)bannerModels;
+- (void)bannerUpdateSource:(NSArray <SHBannerModel *>*)bannerModels;
 
 /**
  放在外面方便你自己修改
