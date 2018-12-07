@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		3B61AC0F21BA7D1C003F64F0 /* SHPhotoBrowserViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 3B61AC0E21BA7D1C003F64F0 /* SHPhotoBrowserViewController.m */; };
+		3B61AC1321BA7DF8003F64F0 /* SHBrowserBaseController.m in Sources */ = {isa = PBXBuildFile; fileRef = 3B61AC1221BA7DF8003F64F0 /* SHBrowserBaseController.m */; };
 		602554623FE85AC1438C9AD3 /* libPods-SHBannerView.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 0946DF4B29F600B8FBFF5B00 /* libPods-SHBannerView.a */; };
 		6D6C30762061EF2500D5FEB6 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 6D6C30752061EF2500D5FEB6 /* AppDelegate.m */; };
 		6D6C30792061EF2500D5FEB6 /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 6D6C30782061EF2500D5FEB6 /* ViewController.m */; };
@@ -41,6 +43,11 @@
 
 /* Begin PBXFileReference section */
 		0946DF4B29F600B8FBFF5B00 /* libPods-SHBannerView.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-SHBannerView.a"; sourceTree = BUILT_PRODUCTS_DIR; };
+		3B61AC0D21BA7D1C003F64F0 /* SHPhotoBrowserViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SHPhotoBrowserViewController.h; sourceTree = "<group>"; };
+		3B61AC0E21BA7D1C003F64F0 /* SHPhotoBrowserViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SHPhotoBrowserViewController.m; sourceTree = "<group>"; };
+		3B61AC1021BA7D58003F64F0 /* SHBannerHeader.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SHBannerHeader.h; sourceTree = "<group>"; };
+		3B61AC1121BA7DF8003F64F0 /* SHBrowserBaseController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SHBrowserBaseController.h; sourceTree = "<group>"; };
+		3B61AC1221BA7DF8003F64F0 /* SHBrowserBaseController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = SHBrowserBaseController.m; sourceTree = "<group>"; };
 		4529AD8B9BE32B3D499D239A /* Pods-SHBannerView.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-SHBannerView.release.xcconfig"; path = "Pods/Target Support Files/Pods-SHBannerView/Pods-SHBannerView.release.xcconfig"; sourceTree = "<group>"; };
 		6D6C30712061EF2500D5FEB6 /* SHBannerView.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = SHBannerView.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		6D6C30742061EF2500D5FEB6 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
@@ -94,6 +101,17 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		3B61AC0C21BA7D1C003F64F0 /* PhotoBrowser */ = {
+			isa = PBXGroup;
+			children = (
+				3B61AC0D21BA7D1C003F64F0 /* SHPhotoBrowserViewController.h */,
+				3B61AC0E21BA7D1C003F64F0 /* SHPhotoBrowserViewController.m */,
+				3B61AC1121BA7DF8003F64F0 /* SHBrowserBaseController.h */,
+				3B61AC1221BA7DF8003F64F0 /* SHBrowserBaseController.m */,
+			);
+			path = PhotoBrowser;
+			sourceTree = "<group>";
+		};
 		6D6C30682061EF2500D5FEB6 = {
 			isa = PBXGroup;
 			children = (
@@ -119,6 +137,7 @@
 		6D6C30732061EF2500D5FEB6 /* SHBannerView */ = {
 			isa = PBXGroup;
 			children = (
+				3B61AC0C21BA7D1C003F64F0 /* PhotoBrowser */,
 				6D6C30A92061EF5C00D5FEB6 /* BannerView */,
 				6D6C30742061EF2500D5FEB6 /* AppDelegate.h */,
 				6D6C30752061EF2500D5FEB6 /* AppDelegate.m */,
@@ -156,6 +175,7 @@
 			isa = PBXGroup;
 			children = (
 				6D6C30AA2061EF8D00D5FEB6 /* SHBannerView.h */,
+				3B61AC1021BA7D58003F64F0 /* SHBannerHeader.h */,
 				6D6C30AB2061EF8D00D5FEB6 /* SHBannerView.m */,
 				6D6C30AD2061EFB400D5FEB6 /* SHBannerModel.h */,
 				6D6C30AE2061EFB400D5FEB6 /* SHBannerModel.m */,
@@ -367,6 +387,8 @@
 			buildActionMask = 2147483647;
 			files = (
 				6D6C30B22061EFCA00D5FEB6 /* SHBannerCell.m in Sources */,
+				3B61AC1321BA7DF8003F64F0 /* SHBrowserBaseController.m in Sources */,
+				3B61AC0F21BA7D1C003F64F0 /* SHPhotoBrowserViewController.m in Sources */,
 				6D6C30AF2061EFB400D5FEB6 /* SHBannerModel.m in Sources */,
 				6D6C30792061EF2500D5FEB6 /* ViewController.m in Sources */,
 				6D6C307F2061EF2500D5FEB6 /* SHBannerView.xcdatamodeld in Sources */,

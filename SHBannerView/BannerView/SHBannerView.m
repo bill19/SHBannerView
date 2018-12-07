@@ -10,7 +10,6 @@
 #import "SHBannerModel.h"
 #import "SHBannerCell.h"
 #import "Masonry.h"
-static NSInteger kBannerTimes = 500;
 @interface SHBannerView()<UICollectionViewDelegate,UICollectionViewDataSource,UICollectionViewDelegateFlowLayout,UIScrollViewDelegate>
 @property (nonatomic, retain) NSTimer *timer;
 @property (nonatomic, weak) UICollectionView *collectionView;
