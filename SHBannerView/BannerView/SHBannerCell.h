@@ -12,5 +12,5 @@
 @interface SHBannerCell : UICollectionViewCell
 
 @property (nonatomic, strong) SHBannerModel *bannerModel;
-
+@property (nonatomic, copy) void(^bannerCellDidClick)(SHBannerModel *bannerModel);
 @end

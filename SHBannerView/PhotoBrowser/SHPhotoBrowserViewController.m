@@ -72,8 +72,12 @@
 }
 #pragma mark - delegate  -  UICollectionView
 - (UICollectionViewCell *)collectionView:(UICollectionView *)collectionView cellForItemAtIndexPath:(NSIndexPath *)indexPath {
+    __weak __typeof(self)weakSelf = self;
     SHBannerCell *bannerCell = [collectionView dequeueReusableCellWithReuseIdentifier:kBannerReuseIdentifier forIndexPath:indexPath];
     bannerCell.bannerModel = [self modelForIndexPath:indexPath];
+    bannerCell.bannerCellDidClick = ^(SHBannerModel *bannerModel) {
+        weakSelf.photoBrowserDidItem(bannerModel, indexPath.row);
+    };
     return bannerCell;
 }
 
@@ -120,5 +124,11 @@
     return _bannerModels;
 }
 
+- (void)scrollViewDidEndDecelerating:(UIScrollView *)scrollView {
+
+    if (scrollView == self.collectionView) {
+
+    }
+}
 
 @end

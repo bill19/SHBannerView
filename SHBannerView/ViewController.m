@@ -44,7 +44,7 @@
 
 - (void)setupBrowser{
     SHPhotoBrowserViewController *vc = [[SHPhotoBrowserViewController alloc] init];
-    vc.PhotoBrowserClick = ^{
+    vc.PhotoBrowserBackgroundClick = ^{
         [self dismissViewControllerAnimated:YES completion:nil];
     };
     [vc bannerUpdateSource:self.source];

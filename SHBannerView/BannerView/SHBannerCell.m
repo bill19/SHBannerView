@@ -19,6 +19,9 @@
     if (self = [super initWithFrame:frame]) {
         _imageView = [[UIImageView alloc] initWithFrame:self.bounds];
         _imageView.contentMode = UIViewContentModeScaleToFill;
+        _imageView.userInteractionEnabled = YES;
+        UITapGestureRecognizer *tapSignle = [[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(tapSignleClick:)];
+        [_imageView addGestureRecognizer:tapSignle];
         [self.contentView addSubview:_imageView];
     }
     return self;
@@ -31,5 +34,11 @@
 
 - (void)pushToNextSecondController {
     NSLog(@"---跳转");
+}
+
+- (void)tapSignleClick:(UITapGestureRecognizer *)signle {
+    if (self.bannerCellDidClick) {
+        self.bannerCellDidClick(self.bannerModel);
+    }
 }
 @end

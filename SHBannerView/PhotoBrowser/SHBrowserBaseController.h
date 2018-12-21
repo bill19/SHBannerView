@@ -12,8 +12,14 @@ NS_ASSUME_NONNULL_BEGIN
 
 @interface SHBrowserBaseController : UIViewController
 
-@property (nonatomic, copy) void(^PhotoBrowserClick)(void);
-
+/**
+ 背景点击
+ */
+@property (nonatomic, copy) void(^PhotoBrowserBackgroundClick)(void);
+/**
+ 是否需要毛玻璃效果
+ */
+@property (nonatomic, assign) BOOL isEffect;
 @end
 
 NS_ASSUME_NONNULL_END

@@ -12,5 +12,12 @@
 @interface SHPhotoBrowserViewController : SHBrowserBaseController
 
 - (void)bannerUpdateSource:(NSArray <SHBannerModel *>*)bannerModels;
-
+/**
+ 滚动到第几个
+ */
+@property (nonatomic, copy) void(^photoBrowserScrollToIndex)(NSInteger fromIdx, NSInteger toIdx);
+/**
+ 点击某个
+ */
+@property (nonatomic, copy) void(^photoBrowserDidItem)(SHBannerModel *bannerModel, NSInteger idx);
 @end
